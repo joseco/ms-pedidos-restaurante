@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pedidos.Domain.Event
 {
-    public class PedidoCreado : DomainEvent
+    public record PedidoCreado : DomainEvent
     {
         public Guid PedidoId { get;  }
         public string NroPedido { get; }

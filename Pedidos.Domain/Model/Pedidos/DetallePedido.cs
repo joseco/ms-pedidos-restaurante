@@ -1,4 +1,7 @@
-﻿using ShareKernel.Core;
+﻿using Pedidos.Domain.Model.Pedidos.ValueObjects;
+using Pedidos.Domain.Model.ValueObjects;
+using Pedidos.Domain.ValueObjects;
+using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +15,9 @@ namespace Pedidos.Domain.Model.Pedidos
         //TODO: Crear value objects para las propiedades
         public Guid ProductoId { get; private set; }
         public string Instrucciones { get; private set; }
-        public int Cantidad { get; private set; }
-        public decimal Precio { get; private set; }
-        public decimal SubTotal { get; private set; }
+        public CantidadValue Cantidad { get; private set; }
+        public PrecioValue Precio { get; private set; }
+        public PrecioValue SubTotal { get; private set; }
 
         internal DetallePedido(Guid productoId, string instrucciones,
             int cantidad, decimal precio)
@@ -24,8 +27,14 @@ namespace Pedidos.Domain.Model.Pedidos
             Instrucciones = instrucciones;
             Cantidad = cantidad;
             Precio = precio;
-            SubTotal = precio * cantidad;
+            SubTotal = new PrecioValue(precio * cantidad);
         }
 
+        internal void ModificarPedido(int cantidad, decimal precio)
+        {
+            Cantidad = cantidad;
+            Precio = precio;
+            SubTotal = precio * cantidad;
+        }
     }
 }

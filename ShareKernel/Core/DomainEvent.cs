@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShareKernel.Core
 {
-    public abstract class DomainEvent 
+    public abstract record DomainEvent 
     {
         public DateTime OccuredOn { get; }
         public Guid Id { get; }

@@ -1,4 +1,6 @@
 ﻿using Pedidos.Domain.Model.Pedidos;
+using Pedidos.Domain.Model.ValueObjects;
+using Pedidos.Domain.ValueObjects;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
@@ -12,13 +14,17 @@ namespace Pedidos.Domain.Model.Productos
     {
         public string Nombre { get; private set; }
 
-        public decimal Precio { get; set; }
+        public PrecioValue PrecioVenta { get; private set; }
 
-        public int StockActual { get; set; }
+        public CantidadValue StockActual { get; private set; }
 
-        public Producto()
+        public Producto(string nombre, PrecioValue precioVenta, CantidadValue stockActual)
         {
             Id = Guid.NewGuid();
+            Nombre = nombre;
+            PrecioVenta = precioVenta;
+            StockActual = stockActual;
         }
+
     }
 }

@@ -31,7 +31,5 @@ namespace ShareKernel.ValueObjects
         {
             return new PersonNameValue(name);
         }
-
-
     }
 }

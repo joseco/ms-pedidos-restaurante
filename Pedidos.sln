@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareKernel", "ShareKernel\ShareKernel.csproj", "{75841D15-EE22-46FE-8F9F-BF7B02DA3A99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareKernel", "ShareKernel\ShareKernel.csproj", "{75841D15-EE22-46FE-8F9F-BF7B02DA3A99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.Domain", "Pedidos.Domain\Pedidos.Domain.csproj", "{45D00A6C-D2B4-48AE-8864-8B10B1FF658C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Domain", "Pedidos.Domain\Pedidos.Domain.csproj", "{45D00A6C-D2B4-48AE-8864-8B10B1FF658C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.ConsoleUI", "Pedidos.ConsoleUI\Pedidos.ConsoleUI.csproj", "{4F2F5010-7AEE-425E-8163-34134238E19A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{45D00A6C-D2B4-48AE-8864-8B10B1FF658C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45D00A6C-D2B4-48AE-8864-8B10B1FF658C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45D00A6C-D2B4-48AE-8864-8B10B1FF658C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2F5010-7AEE-425E-8163-34134238E19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2F5010-7AEE-425E-8163-34134238E19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2F5010-7AEE-425E-8163-34134238E19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2F5010-7AEE-425E-8163-34134238E19A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
