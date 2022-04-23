@@ -3,9 +3,6 @@ using Pedidos.Domain.Model.Productos;
 using Pedidos.Domain.Repositories;
 using Pedidos.Infraestructure.EF.Contexts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Pedidos.Infraestructure.EF.Repository

@@ -3,11 +3,6 @@ using Pedidos.Domain.Event;
 using Pedidos.Infraestructure.EF.Config.ReadConfig;
 using Pedidos.Infraestructure.EF.ReadModel;
 using ShareKernel.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pedidos.Infraestructure.EF.Contexts
 {

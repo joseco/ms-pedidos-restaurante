@@ -4,7 +4,6 @@ using Pedidos.Application.Dto.Pedido;
 using Pedidos.Application.UseCases.Command.Pedidos.CrearPedido;
 using Pedidos.Application.UseCases.Queries.Pedidos.GetPedidoById;
 using Pedidos.Application.UseCases.Queries.Pedidos.GetPedidosCancelados;
-using Pedidos.Domain.Model.Pedidos;
 using System;
 using System.Threading.Tasks;
 

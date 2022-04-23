@@ -4,11 +4,6 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pedidos.Domain.Model.Productos;
 using Pedidos.Domain.Model.ValueObjects;
 using Pedidos.Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pedidos.Infraestructure.EF.Config.WriteConfig
 {
