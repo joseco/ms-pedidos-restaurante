@@ -25,6 +25,7 @@ namespace Pedidos.Application.UseCases.Command.Productos.UpdateStockWhenItemPedi
         {
             Producto objProducto = await _productoRepository.FindByIdAsync(notification.ProductoId);
             objProducto.ReducirStock(notification.Cantidad);
+
             await _productoRepository.UpdateAsync(objProducto);
 
 
