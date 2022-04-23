@@ -12,7 +12,7 @@ namespace Pedidos.Domain.Model.ValueObjects
         public int Value { get; }
         public CantidadValue(int value)
         {
-            if(value <= 0)
+            if(value < 0)
             {
                 throw new BussinessRuleValidationException("La cantidad no puede ser negativa o cero");
             }

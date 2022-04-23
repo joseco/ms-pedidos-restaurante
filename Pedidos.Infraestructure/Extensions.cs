@@ -27,9 +27,8 @@ namespace Pedidos.Infraestructure
             services.AddDbContext<WriteDbContext>(context => 
                 context.UseSqlServer(connectionString));
 
-
-
             services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IProductoRepository, ProductoRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
