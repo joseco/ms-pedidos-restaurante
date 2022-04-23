@@ -1,19 +1,35 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Pedidos.Application;
 using Pedidos.Domain.Repositories;
 using Pedidos.Infraestructure.EF;
+using Pedidos.Infraestructure.EF.Contexts;
 using Pedidos.Infraestructure.EF.Repository;
-using Pedidos.Infraestructure.MemoryRepository;
+using System.Reflection;
 
 namespace Pedidos.Infraestructure
 {
     public static class Extensions
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services,
+            IConfiguration configuration)
         {
-            //TODO: Eliminar despues. Solo para proposito de pruebas
-            services.AddSingleton<MemoryDatabase>();
+            services.AddApplication();
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            services.AddScoped<IPedidoRepository, MemoryPedidoRepository>();
+            var connectionString = 
+                configuration.GetConnectionString("PedidoDbConnectionString");
+
+            services.AddDbContext<ReadDbContext>(context => 
+                context.UseSqlServer(connectionString));
+            services.AddDbContext<WriteDbContext>(context => 
+                context.UseSqlServer(connectionString));
+
+
+
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 

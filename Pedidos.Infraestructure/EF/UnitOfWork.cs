@@ -1,4 +1,5 @@
 ﻿using Pedidos.Domain.Repositories;
+using Pedidos.Infraestructure.EF.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,16 @@ namespace Pedidos.Infraestructure.EF
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public Task Commit()
+        private readonly WriteDbContext _context;
+
+        public UnitOfWork(WriteDbContext context)
         {
-            return Task.CompletedTask;
+            _context = context;
+        }
+
+        public async Task Commit()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

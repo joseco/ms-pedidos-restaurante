@@ -1,5 +1,7 @@
-﻿using Pedidos.Domain.Model.Pedidos;
+﻿using Microsoft.EntityFrameworkCore;
+using Pedidos.Domain.Model.Pedidos;
 using Pedidos.Domain.Repositories;
+using Pedidos.Infraestructure.EF.Contexts;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
@@ -11,23 +13,27 @@ namespace Pedidos.Infraestructure.EF.Repository
 {
     public class PedidoRepository : IPedidoRepository
     {
-        public Task CreateAsync(Pedido obj)
-        {
-            Console.WriteLine($"Insertando el pedido { obj.NroPedido }");
+        public readonly DbSet<Pedido> _pedidos;
 
-            return Task.CompletedTask;
+        public PedidoRepository(WriteDbContext context)
+        {
+            _pedidos = context.Pedido;
         }
 
-        public Task<Pedido> FindByIdAsync(Guid id)
+        public async Task CreateAsync(Pedido obj)
         {
-            Console.WriteLine($"Retornando el pedido { id }");
+            await _pedidos.AddAsync(obj);
+        }
 
-            return null;
+        public async Task<Pedido> FindByIdAsync(Guid id)
+        {
+            return await _pedidos.Include("_detalle")
+                    .SingleAsync(x => x.Id == id);
         }
 
         public Task UpdateAsync(Pedido obj)
         {
-            Console.WriteLine($"Actualizando el pedido { obj.NroPedido }");
+            _pedidos.Update(obj);
 
             return Task.CompletedTask;
         }

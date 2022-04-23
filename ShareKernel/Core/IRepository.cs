@@ -12,5 +12,6 @@ namespace ShareKernel.Core
 
         Task CreateAsync(T obj);
 
+
     }
 }

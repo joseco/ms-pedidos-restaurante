@@ -30,6 +30,8 @@ namespace Pedidos.Domain.Model.Pedidos
             SubTotal = new PrecioValue(precio * cantidad);
         }
 
+        private DetallePedido() { }
+
         internal void ModificarPedido(int cantidad, decimal precio)
         {
             Cantidad = cantidad;
