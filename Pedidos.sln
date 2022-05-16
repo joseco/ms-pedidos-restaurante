@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareKernel", "ShareKernel\ShareKernel.csproj", "{75841D15-EE22-46FE-8F9F-BF7B02DA3A99}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Domain", "Pedidos.Domain\Pedidos.Domain.csproj", "{45D00A6C-D2B4-48AE-8864-8B10B1FF658C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.Application", "Pedidos.Application\Pedidos.Application.csproj", "{6FC1B86F-C491-4B6C-A8D1-19659FCAE0ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Application", "Pedidos.Application\Pedidos.Application.csproj", "{6FC1B86F-C491-4B6C-A8D1-19659FCAE0ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.Infraestructure", "Pedidos.Infraestructure\Pedidos.Infraestructure.csproj", "{642500C8-47FE-49E2-9582-D7D61FF69A7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Infraestructure", "Pedidos.Infraestructure\Pedidos.Infraestructure.csproj", "{642500C8-47FE-49E2-9582-D7D61FF69A7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.WebApi", "Pedidos.WebApi\Pedidos.WebApi.csproj", "{09B2A943-10D1-4664-96CA-CA12F9D76A95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.WebApi", "Pedidos.WebApi\Pedidos.WebApi.csproj", "{09B2A943-10D1-4664-96CA-CA12F9D76A95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.Test", "Pedidos.Test\Pedidos.Test.csproj", "{F0E4291D-A27A-4584-9AEA-6E0694EDBB4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{09B2A943-10D1-4664-96CA-CA12F9D76A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B2A943-10D1-4664-96CA-CA12F9D76A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B2A943-10D1-4664-96CA-CA12F9D76A95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0E4291D-A27A-4584-9AEA-6E0694EDBB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E4291D-A27A-4584-9AEA-6E0694EDBB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E4291D-A27A-4584-9AEA-6E0694EDBB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E4291D-A27A-4584-9AEA-6E0694EDBB4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
