@@ -1,4 +1,5 @@
-﻿using Pedidos.Domain.Model.ValueObjects;
+﻿using Pedidos.Domain.Event;
+using Pedidos.Domain.Model.ValueObjects;
 using Pedidos.Domain.ValueObjects;
 using ShareKernel.Core;
 using System;
@@ -35,6 +36,11 @@ namespace Pedidos.Domain.Model.Productos
                 throw new BussinessRuleValidationException("La cantidad de stock actual es insuficiente");
             }
             StockActual = stockResultante;
+        }
+        public void ConsolidarProducto()
+        {
+            var evento = new ProductoCreado(Id, Nombre, StockActual, PrecioVenta);
+            AddDomainEvent(evento);
         }
 
     }
