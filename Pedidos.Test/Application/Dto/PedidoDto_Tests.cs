@@ -16,7 +16,7 @@ namespace Pedidos.Test.Application.Dto
             var idTest = Guid.NewGuid();
             var nroPedidoTest = "ABC";
             var totalTest = 140;
-            var detallePedidoTest = getDetallePedido();
+            var detallePedidoTest = MockFactory.GetDetallePedido();
 
             var objPedido = new PedidoDto();
 
@@ -36,32 +36,6 @@ namespace Pedidos.Test.Application.Dto
             Assert.Equal(detallePedidoTest.Count, objPedido.Detalle.Count);
         }
 
-        private List<DetallePedidoDto> getDetallePedido()
-        {
-            return new List<DetallePedidoDto>()
-            {
-                new()
-                {
-                    Cantidad = 1,
-                    Instrucciones = "Instrucciones Prod 1",
-                    Precio = 10,
-                    ProductoId = Guid.NewGuid()
-                },
-                new()
-                {
-                    Cantidad = 2,
-                    Instrucciones = "Instrucciones Prod 2",
-                    Precio = 20,
-                    ProductoId = Guid.NewGuid()
-                },
-                new()
-                {
-                    Cantidad = 3,
-                    Instrucciones = "Instrucciones Prod 3",
-                    Precio = 30,
-                    ProductoId = Guid.NewGuid()
-                }
-            };
-        }
+        
     }
 }
