@@ -2,16 +2,12 @@
 using Pedidos.Domain.Event;
 using Pedidos.Domain.Model.Productos;
 using Pedidos.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Pedidos.Application.UseCases.Command.Productos.UpdateStockWhenItemPedidoAgregado
 {
-  
+
     public class UpdateStockWhenItemPedidoAgregadoHandler : INotificationHandler<ItemPedidoAgregado>
     {
         private readonly IProductoRepository _productoRepository;
@@ -27,7 +23,6 @@ namespace Pedidos.Application.UseCases.Command.Productos.UpdateStockWhenItemPedi
             objProducto.ReducirStock(notification.Cantidad);
 
             await _productoRepository.UpdateAsync(objProducto);
-
 
         }
     }

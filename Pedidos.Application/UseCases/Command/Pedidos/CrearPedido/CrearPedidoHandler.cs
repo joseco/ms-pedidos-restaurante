@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using Pedidos.Application.Services;
 using Pedidos.Domain.Factories;
 using Pedidos.Domain.Model.Pedidos;
-using Pedidos.Domain.Model.Productos;
 using Pedidos.Domain.Repositories;
 using System;
 using System.Threading;
