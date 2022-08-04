@@ -18,13 +18,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="NurRestaurantSharedKernel" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Pedidos.Application\Pedidos.Application.csproj" />
     <ProjectReference Include="..\Pedidos.Domain\Pedidos.Domain.csproj" />
     <ProjectReference Include="..\Pedidos.Infraestructure\Pedidos.Infraestructure.csproj" />
-    <ProjectReference Include="..\ShareKernel\ShareKernel.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShareKernel\ShareKernel.csproj" />
+    <PackageReference Include="NurRestaurantSharedKernel" Version="1.0.1" />
   </ItemGroup>
 
 </Project>
