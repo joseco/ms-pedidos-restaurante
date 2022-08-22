@@ -17,7 +17,7 @@ namespace Pedidos.Test.Domain
             decimal precioTest = 50;
             int stockTest = 5;
             var factory = new ProductoFactory();
-            var producto = factory.Create(nombreTest, 50, 5);
+            var producto = factory.Create(Guid.NewGuid(), nombreTest, 50, 5);
             
             Assert.NotNull(producto);
             Assert.Equal(nombreTest, producto.Nombre);

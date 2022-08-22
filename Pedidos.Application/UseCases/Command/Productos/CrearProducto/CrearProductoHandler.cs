@@ -29,7 +29,7 @@ namespace Pedidos.Application.UseCases.Command.Productos.CrearProducto
         {
             try
             {
-                Producto objProducto = _productoFactory.Create(request.Nombre, request.PrecioVenta, request.StockActual);
+                Producto objProducto = _productoFactory.Create(request.ArticuloId, request.Nombre, request.PrecioVenta, request.StockActual);
                 objProducto.ConsolidarProducto();
 
                 await _productoRepository.CreateAsync(objProducto);

@@ -20,9 +20,9 @@ namespace Pedidos.Domain.Model.Productos
             StockActual = 0;
         }
 
-        public Producto(string nombre, PrecioValue precioVenta, CantidadValue stockActual)
+        public Producto(Guid id, string nombre, PrecioValue precioVenta, CantidadValue stockActual)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             Nombre = nombre;
             PrecioVenta = precioVenta;
             StockActual = stockActual;

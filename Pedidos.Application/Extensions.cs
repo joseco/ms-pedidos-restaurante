@@ -13,7 +13,7 @@ namespace Pedidos.Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient<IPedidoService, PedidoService>();
             services.AddTransient<IPedidoFactory, PedidoFactory>();
-
+            services.AddSingleton<IProductoFactory, ProductoFactory>();
 
 
             return services;
