@@ -6,9 +6,9 @@ namespace Pedidos.Domain.Factories
 {
     public class ProductoFactory : IProductoFactory
     {
-        public Producto Create(Guid id, string nombre, decimal precioVenta, int stockActual)
+        public Producto Create(Guid id, string nombre,  string descripcion, decimal precioVenta, int stockActual, bool esReceta = false)
         {
-            return new Producto(id, nombre, precioVenta, stockActual);
+            return new Producto(id, nombre, descripcion, precioVenta, stockActual, esReceta);
         }
     }
 }

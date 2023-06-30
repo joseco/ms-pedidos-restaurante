@@ -13,11 +13,14 @@ namespace Pedidos.Test.Application.UseCases.Command
         [Fact]
         public void CrearProductoCommand_DataValid()
         {
+            var idActualTest = Guid.NewGuid();
             var stockActualTest = 5;
             var precioActualTest = new decimal(40.0);
             var nombreProductoTest = "Test";
-            var command = new CrearProductoCommand(stockActualTest, precioActualTest, nombreProductoTest);
+            var descripcionProductoTest = "DescripcionTest";
+            var command = new CrearProductoCommand(idActualTest, stockActualTest, precioActualTest, nombreProductoTest, descripcionProductoTest);
 
+            Assert.Equal(idActualTest, command.ArticuloId);
             Assert.Equal(stockActualTest, command.StockActual);
             Assert.Equal(precioActualTest, command.PrecioVenta);
             Assert.Equal(nombreProductoTest, command.Nombre);

@@ -36,6 +36,14 @@ namespace Pedidos.Infraestructure.EF.Config.WriteConfig
             builder.Property(x => x.StockActual)
                 .HasConversion(cantidadConverter)
                 .HasColumnName("stockActual");
+
+            builder.Property(x => x.Descripcion)
+                .HasColumnName("descripcion")
+                .HasMaxLength(500);
+
+            builder.Property(x => x.EsReceta)
+                .HasColumnName("esReceta")
+                .HasDefaultValue(false);
         }
     }
 }

@@ -5,6 +5,6 @@ namespace Pedidos.Domain.Factories
 {
     public interface IProductoFactory
     {
-        Producto Create(Guid id, string nombre, decimal precioVenta, int stockActual);
+        Producto Create(Guid id, string nombre, string descripcion, decimal precioVenta, int stockActual, bool esReceta = false);
     }
 }

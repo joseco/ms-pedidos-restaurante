@@ -25,7 +25,9 @@ namespace Pedidos.Test.Application.UseCases.Handler
         private int stockActualTest = 5;
         private decimal precioActualTest = new decimal(40.0);
         private string nombreProductoTest = "Test";
+        private string descripcionProductoTest = "Test Descripcion";
         private Producto productoTest;
+        private Guid productoId = Guid.NewGuid();
 
         public CrearProductoHandler_Test()
         {
@@ -33,7 +35,7 @@ namespace Pedidos.Test.Application.UseCases.Handler
             logger = new Mock<ILogger<CrearProductoHandler>>();
             productoFactory = new Mock<IProductoFactory>();
             unitOfWork = new Mock<IUnitOfWork>();
-            productoTest = new ProductoFactory().Create(nombreProductoTest, precioActualTest, stockActualTest);
+            productoTest = new ProductoFactory().Create(productoId, nombreProductoTest, descripcionProductoTest, precioActualTest, stockActualTest);
 
         }
         [Fact]
@@ -41,7 +43,7 @@ namespace Pedidos.Test.Application.UseCases.Handler
         {
 
 
-            productoFactory.Setup(factory => factory.Create(nombreProductoTest, precioActualTest, stockActualTest))
+            productoFactory.Setup(factory => factory.Create(productoId, nombreProductoTest, descripcionProductoTest, precioActualTest, stockActualTest, false))
                 .Returns(productoTest);
 
             var objHandler = new CrearProductoHandler(
@@ -50,16 +52,15 @@ namespace Pedidos.Test.Application.UseCases.Handler
                 productoFactory.Object,
                 unitOfWork.Object
             );
-            var objRequest = new CrearProductoCommand(
-               stockActualTest, precioActualTest, nombreProductoTest
+            var objRequest = new CrearProductoCommand(Guid.NewGuid(),
+               stockActualTest, precioActualTest, nombreProductoTest, descripcionProductoTest
            );
             var tcs = new CancellationTokenSource(1000);
             var result = objHandler.Handle(objRequest, tcs.Token);
             Assert.IsType<Guid>(result.Result);
 
             var domainEventList = (List<DomainEvent>)productoTest.DomainEvents;
-            Assert.Single(domainEventList);
-            Assert.IsType<ProductoCreado>(domainEventList[0]);
+            Assert.Empty(domainEventList);
         }
         [Fact]
         public void CrearProductoHandler_Handle_Fail()
@@ -71,8 +72,8 @@ namespace Pedidos.Test.Application.UseCases.Handler
                 productoFactory.Object,
                 unitOfWork.Object
             );
-            var objRequest = new CrearProductoCommand(
-               stockActualTest, precioActualTest, nombreProductoTest
+            var objRequest = new CrearProductoCommand(Guid.NewGuid(),
+               stockActualTest, precioActualTest, nombreProductoTest, descripcionProductoTest
            );
             var tcs = new CancellationTokenSource(1000);
             var result = objHandler.Handle(objRequest, tcs.Token);

@@ -25,7 +25,7 @@ namespace Pedidos.Application.UseCases.Consumers
         {
             ArticuloCreado @event = context.Message;
 
-            CrearProductoCommand command = new CrearProductoCommand(@event.ArticuloId, 0, @event.PrecioVenta, @event.Nombre);
+            CrearProductoCommand command = new CrearProductoCommand(@event.ArticuloId, 0, @event.PrecioVenta, @event.Nombre, @event.Descripcion, @event.EsReceta);
 
             await _mediator.Send(command);
 

@@ -28,10 +28,13 @@ namespace Pedidos.Test.Application.UseCases.Command
             decimal precioTest = new decimal(10.0);
             int cantidadValue = 1;
 
-            var nombreProdTest = "Empanada";
+            var idTest = Guid.NewGuid();
+            var nombreProdTest = "Coca-Cola";
+            var descripcion = "";
             var precioVentaTest = new decimal(3.0);
             var stockActualTest = 4;
-            var productoTest = new Producto(nombreProdTest, precioVentaTest, stockActualTest);
+            var esReceta = false;
+            var productoTest = new Producto(idTest, nombreProdTest, descripcion, precioVentaTest, stockActualTest, esReceta);
             var tcs = new CancellationTokenSource(1000);
 
             productoRepository.Setup(mock => mock.FindByIdAsync(productoIdTest))

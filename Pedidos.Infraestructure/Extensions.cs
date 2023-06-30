@@ -49,7 +49,8 @@ namespace Pedidos.Infraestructure
             services.AddMassTransit(config =>
             {
                 config.AddConsumer<ArticuloCreadoConsumer>().Endpoint(endpoint => endpoint.Name = ArticuloCreadoConsumer.QueueName);
-                
+                config.AddConsumer<StockArticuloActualizadoConsumer>().Endpoint(endpoint => endpoint.Name = StockArticuloActualizadoConsumer.QueueName);
+
                 config.UsingRabbitMq((context, cfg) =>
                 {
                     var uri = string.Format("amqp://{0}:{1}@{2}:{3}", rabbitMqUserName, rabbitMqPassword, rabbitMqHost, rabbitMqPort);
@@ -58,6 +59,11 @@ namespace Pedidos.Infraestructure
                     cfg.ReceiveEndpoint(ArticuloCreadoConsumer.QueueName, endpoint =>
                     {
                         endpoint.ConfigureConsumer<ArticuloCreadoConsumer>(context);
+                    });
+
+                    cfg.ReceiveEndpoint(StockArticuloActualizadoConsumer.QueueName, endpoint =>
+                    {
+                        endpoint.ConfigureConsumer<StockArticuloActualizadoConsumer>(context);
                     });
                 });
             });

@@ -29,9 +29,9 @@ namespace Pedidos.Application.UseCases.Command.Productos.CrearProducto
         {
             try
             {
-                Producto objProducto = _productoFactory.Create(request.ArticuloId, request.Nombre, request.PrecioVenta, request.StockActual);
-                objProducto.ConsolidarProducto();
-
+                Producto objProducto = _productoFactory.Create(request.ArticuloId, request.Nombre, request.Descripcion, request.PrecioVenta, request.StockActual,
+                    request.EsReceta);
+                
                 await _productoRepository.CreateAsync(objProducto);
                 await _unitOfWork.Commit();
 

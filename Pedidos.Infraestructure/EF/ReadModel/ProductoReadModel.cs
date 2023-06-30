@@ -8,5 +8,8 @@ namespace Pedidos.Infraestructure.EF.ReadModel
         public string Nombre { get; set; }
         public decimal PrecioVenta { get; set; }
         public int StockActual { get; set; }
+        public bool EsReceta { get; set; }
+
+        public string Descripcion { get; set; }
     }
 }
